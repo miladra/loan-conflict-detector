@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Conflicts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<h1>Loans</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>File</th>
+        <th>Line In File</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Postcode</th>
+        <th>Phone</th>
+        <th>Credit Limit</th>
+        <th>Birthday</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${loans.empty}">
+        <td colspan="2"> No loans Available </td>
+    </tr>
+    <tr th:each="loan : ${loans}">
+        <td th:text="${loan.fileName}"></td>
+        <td th:text="${loan.lineNumber}"></td>
+        <td th:text="${loan.name}"></td>
+        <td th:text="${loan.address}"></td>
+        <td th:text="${loan.postcode}"></td>
+        <td th:text="${loan.phone}"></td>
+        <td th:text="${loan.creditLimit}"></td>
+        <td th:text="${loan.birthday}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<h1>Conflicts</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>File</th>
+            <th>Line In File</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Postcode</th>
+            <th>Phone</th>
+            <th>Credit Limit</th>
+            <th>Birthday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:if="${conflicts.empty}">
+            <td colspan="2"> No Conflicts Available </td>
+        </tr>
+        <tr th:each="conflict : ${conflicts}">
+            <td th:text="${conflict.fileName}"></td>
+            <td th:text="${conflict.lineNumber}"></td>
+            <td th:text="${conflict.name}"></td>
+            <td th:text="${conflict.address}"></td>
+            <td th:text="${conflict.postcode}"></td>
+            <td th:text="${conflict.phone}"></td>
+            <td th:text="${conflict.creditLimit}"></td>
+            <td th:text="${conflict.birthday}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
