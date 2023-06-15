@@ -1,0 +1,11 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+spring:
+  application:
+    name: loan-conflict-detector
+server:
+  port: 8080
+
+sources:
+  directory: "classpath:loan"
